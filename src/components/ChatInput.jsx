@@ -4,12 +4,13 @@ import { Paperclip, ArrowUp } from "lucide-react";
 
 import "../styles/ChatInput.scss";
 
-function ChatInput({ value, onChange, onSend }) {
+function ChatInput({ value, onChange, onSend, disabled }) {
   const textareaRef = useRef(null);
 
   const handleSubmit = () => {
-    const message = value?.trim();
+    if (disabled) return;
 
+    const message = value.trim();
     if (!message) return;
 
     onSend(message);
@@ -53,6 +54,7 @@ function ChatInput({ value, onChange, onSend }) {
           placeholder="Ask a healthcare-related question..."
           rows={1}
           aria-label="Message"
+          disabled={disabled}
         />
 
         <div className="chat-input-toolbar">
@@ -69,7 +71,7 @@ function ChatInput({ value, onChange, onSend }) {
           <button
             type="submit"
             className="input-send-button"
-            disabled={!value?.trim()}
+            disabled={!value?.trim() || disabled}
             aria-label="Send message"
             title="Send message"
           >

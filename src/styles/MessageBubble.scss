@@ -23,6 +23,7 @@
 .message-content {
   display: block;
   width: fit-content;
+  font-size: 14px;
   max-width: 75%;
   padding: 4px 12px;
   border: 1px solid $color-border;
@@ -42,9 +43,9 @@
 .user-message .message-content {
   order: 1;
   margin-left: auto;
-  background: $color-primary;
-  color: #ffffff;
-  border-color: $color-primary;
+  background: $color-accent;
+  color: $color-primary;
+  border-color: $color-accent;
   border-radius: 18px 18px 4px 18px;
 }
 

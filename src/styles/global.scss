@@ -76,12 +76,12 @@ button {
   flex: 1;
   min-height: 0;
 
-  scrollbar-width: none; // Firefox
-  -ms-overflow-style: none; // Legacy Edge
+  // scrollbar-width: none; // Firefox
+  // -ms-overflow-style: none; // Legacy Edge
 
-  &::-webkit-scrollbar {
-    display: none; // Chrome, Edge, Safari
-  }
+  // &::-webkit-scrollbar {
+  //   display: none; // Chrome, Edge, Safari
+  // }
 
 }
 

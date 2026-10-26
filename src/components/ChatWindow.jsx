@@ -9,6 +9,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import MessageBubble from "./MessageBubble";
+import TypingIndicator from "./TypingIndicator";
 import "../styles/ChatWindow.scss";
 
 const suggestedPrompts = [
@@ -42,13 +43,13 @@ const suggestedPrompts = [
   },
 ];
 
-function ChatWindow({ messages, onSelectPrompt }) {
+function ChatWindow({ messages, isTyping, onSelectPrompt }) {
 
  const messagesEndRef = useRef(null);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+  }, [messages, isTyping]);
 
   if (messages.length > 0) {
     return (
@@ -57,6 +58,7 @@ function ChatWindow({ messages, onSelectPrompt }) {
           {messages.map((message) => (
             <MessageBubble key={message.id} message={message} />
           ))}
+          {isTyping && <TypingIndicator />}
           <div ref={messagesEndRef} />
         </div>
       </section>
