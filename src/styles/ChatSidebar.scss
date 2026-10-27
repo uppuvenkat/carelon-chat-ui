@@ -165,6 +165,7 @@
   background: transparent;
   text-align: left;
   cursor: pointer;
+  font-size: 13px;
 
   svg {
     flex-shrink: 0;
@@ -281,6 +282,67 @@
 
 .collapsed-top .collapsed-brand {
   margin: 0 auto;
+}
+
+.sidebar-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0px;
+  padding: 10px 12px;
+  min-width: 0;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: $color-surface;
+  color: $color-text-secondary;
+
+  input {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: $color-text;
+    font-size: 13px;
+
+    &::placeholder {
+      color: $color-text-secondary;
+    }
+  }
+
+  button {
+    border: none;
+    background: transparent;
+    color: $color-text-secondary;
+  }
+
+  &:focus-within {
+    border-color: $color-secondary;
+  }
+}
+
+.chat-sidebar.collapsed {
+  .sidebar-search {
+    justify-content: center;
+    margin: 8px auto;
+    padding: 12px;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+  }
+
+  .sidebar-search input,
+  .sidebar-search button {
+    display: none;
+  }
+}
+
+.sidebar-empty {
+  padding: 12px;
+  color: $color-text-secondary;
+  font-size: 13px;
+  text-align: center;
 }
 
 
